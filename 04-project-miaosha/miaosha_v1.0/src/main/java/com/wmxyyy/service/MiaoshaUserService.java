@@ -91,7 +91,7 @@ public class MiaoshaUserService {
 		if(!calcPass.equals(dbPass)) {
 			throw new GlobalException(CodeMsg.PASSWORD_ERROR);
 		}
-		//生成sessionID
+		//密码正确后生成token存储再redis后，作为cookie返回给客户端
 		String token = UUIDUtil.uuid();
 		addCookie(response,token, user);
 		return true;
