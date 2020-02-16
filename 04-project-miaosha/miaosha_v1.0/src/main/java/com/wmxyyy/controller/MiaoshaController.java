@@ -54,7 +54,7 @@ public class MiaoshaController implements InitializingBean {
 	@Autowired
 	MQSender sender;
 
-	//redis内存标记，秒杀完成后不能访问redis
+	//redis内存标记，秒杀完成后不能访问redis.//false可以访问，true拒绝访问
 	private HashMap<Long, Boolean> localOverMap =  new HashMap<Long, Boolean>();
 
 	/**
@@ -135,6 +135,14 @@ public class MiaoshaController implements InitializingBean {
 		return Result.success(result);
 	}
 
+	/**
+	 * 获取秒杀地址
+	 * @param request
+	 * @param user
+	 * @param goodsId
+	 * @param verifyCode
+	 * @return
+	 */
 	@AccessLimit(seconds=5, maxCount=5, needLogin=true)
 	@RequestMapping(value="/path", method=RequestMethod.GET)
 	@ResponseBody

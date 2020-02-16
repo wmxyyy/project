@@ -23,7 +23,7 @@ public class GoodsService {
 	}
 
 	/**
-	 * 根据id查询商品信心
+	 * 根据id查询商品信息
 	 * @param goodsId
 	 * @return
 	 */

@@ -79,7 +79,7 @@ public class MiaoshaService {
 	}
 
 	/**
-	 * 秒杀路径
+	 * 生成秒杀路径存在redis
 	 * @param user
 	 * @param goodsId
 	 * @return
@@ -94,7 +94,7 @@ public class MiaoshaService {
 	}
 
 	/**
-	 * 验证秒杀路径正确性
+	 * 在redis验证秒杀路径正确性
 	 * @param user
 	 * @param goodsId
 	 * @param path
